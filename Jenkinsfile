@@ -13,6 +13,7 @@ pipeline{
         }
 
         stage('Build'){
+            steps {
                     echo 'Pulling...' + env.BRANCH_NAME
                     def mvnHome = tool 'Maven 3.5.2'
                         def targetVersion = getDevVersion()
@@ -26,6 +27,7 @@ pipeline{
                         // execute the unit testing and collect the reports
                         junit '**//*target/surefire-reports/TEST-*.xml'
                         archive 'target*//*.jar'
+            }
                     
         }
 
