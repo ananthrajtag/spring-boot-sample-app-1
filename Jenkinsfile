@@ -46,7 +46,9 @@ pipeline{
                 }
             }
                     
-        }        stage('Deploy QA'){
+        }        
+        
+        stage('Deploy QA'){
             steps {
                 script {
                     echo 'deploying to QA'
