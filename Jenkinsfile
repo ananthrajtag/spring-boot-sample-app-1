@@ -32,6 +32,35 @@ pipeline{
             }
                     
         }
+        
+        
+        ///start deploy///
+        
+        stage('Deploy Dev'){
+            steps {
+                script {
+                    echo 'deploying to dev'
+                    sh "mkdir -p /tmp/dev"
+                    sh "cp -r target/*.jar /tmp/dev/"
+                    
+                }
+            }
+                    
+        }        stage('Deploy QA'){
+            steps {
+                script {
+                    echo 'deploying to QA'
+                    sh "mkdir -p /tmp/qa"
+                    sh "cp -r target/*.jar /tmp/qa/"
+                    
+                }
+            }
+                    
+        }
+
+        ////end deploy ///
+        
+        
 
     }
 }
