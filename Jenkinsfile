@@ -2,7 +2,7 @@ def imageName = 'example'
 
 pipeline{
     agent{
-        label 'workers'
+        label 'java8'
     }
 
     stages{
